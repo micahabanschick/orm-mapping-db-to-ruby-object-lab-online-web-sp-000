@@ -87,8 +87,8 @@ class Student
       WHERE grade = 10 ORDER BY id
       LIMIT 1
     SQL
-    DB[:conn].execute(sql).map{|row| self.new_from_db(row)}
-    binding.pry
+    DB[:conn].execute(sql).map{|row| self.new_from_db(row)}[0]
+    #binding.pry
   end 
   
   def self.all_students_in_grade_X(grade)
